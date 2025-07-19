@@ -1,12 +1,12 @@
-<div class="feature-card" [ngClass]="customClass">
-  <div class="icon-container">
-    <div class="icon-wrapper">
+<div class="feature-card h-100 d-flex flex-column" [ngClass]="customClass">
+  <div class="icon-container flex-shrink-0">
+    <div class="icon-wrapper mx-auto">
       <i [class]="iconType + ' fa-' + icon" [style.color]="iconColor"></i>
     </div>
   </div>
 
-  <div class="card-content">
-    <h3 class="card-title">{{ title }}</h3>
-    <p class="card-description">{{ description }}</p>
+  <div class="card-content flex-grow-1 d-flex flex-column">
+    <h3 class="card-title mb-3">{{ title }}</h3>
+    <p class="card-description mb-0 flex-grow-1">{{ description }}</p>
   </div>
 </div>
