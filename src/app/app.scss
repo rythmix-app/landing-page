@@ -323,3 +323,124 @@
     font-family: 'Author-Light', serif;
   }
 }
+
+/************** footer **************/
+.footer-section {
+  background: linear-gradient(135deg, #052E30 0%, #0D7377 100%);
+  color: white;
+  padding: 4rem 0 2rem;
+
+  .footer-logo {
+    .logo-text {
+      font-family: 'Author-Bold', serif;
+      font-size: 2.5rem;
+      color: #14FFEC;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 0 20px rgba(20, 255, 236, 0.3);
+    }
+  }
+
+  .footer-nav {
+    .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-family: 'Author-Regular', serif;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+
+        &:hover {
+          color: #14FFEC;
+          background: rgba(20, 255, 236, 0.1);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .social-section {
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      &:hover {
+        background: rgba(20, 255, 236, 0.2);
+        color: #14FFEC;
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 10px 25px rgba(20, 255, 236, 0.3);
+      }
+    }
+  }
+
+  .footer-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(20, 255, 236, 0.5),
+        transparent
+    );
+    margin: 2rem 0 1.5rem;
+  }
+
+  .footer-bottom {
+    .copyright-text {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      margin: 0;
+      font-family: 'Author-Light', serif;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 3rem 0 1.5rem;
+
+    .footer-logo .logo-text {
+      font-size: 2rem;
+    }
+
+    .footer-nav .nav-links {
+      gap: 1rem !important;
+
+      .nav-link {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    .social-section .social-link {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section .footer-nav .nav-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem !important;
+  }
+}
