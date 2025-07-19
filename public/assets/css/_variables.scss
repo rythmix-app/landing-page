@@ -1,0 +1,42 @@
+$blue-dark: #052E30;
+$blue-light: #14FFEC;
+$blue-green: #0D7377;
+$blue-turquoise: #19B3BD;
+$dark-primary: #0D0D0D;
+$dark-secondary: #121212;
+
+$primary: $blue-dark;
+
+:root {
+  --blue-dark: #{$blue-dark};
+  --blue-light: #{$blue-light};
+  --blue-green: #{$blue-green};
+  --blue-turquoise: #{$blue-turquoise};
+  --dark-primary: #{$dark-primary};
+  --dark-secondary: #{$dark-secondary};
+}
+
+$font-poppins-light: 'Poppins', sans-serif;
+$font-poppins-regular: 'Poppins', sans-serif;
+$font-poppins-medium: 'Poppins', sans-serif;
+$font-poppins-semibold: 'Poppins', sans-serif;
+$font-poppins-bold: 'Poppins', sans-serif;
+
+$font-author-light: 'Author-Light', 'Poppins', sans-serif;
+$font-author-regular: 'Author-Regular', 'Poppins', sans-serif;
+$font-author-medium: 'Author-Medium', 'Poppins', sans-serif;
+$font-author-bold: 'Author-Bold', 'Poppins', sans-serif;
+
+$font-family-base: $font-poppins-regular;
+$headings-font-family: $font-poppins-semibold;
+
+$primary: $blue-dark;
+
+$display-font-sizes: (
+  1: 3rem,
+  2: 2.5rem,
+  3: 2rem,
+  4: 1.5rem,
+  5: 1rem,
+  6: 0.5rem
+);

@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../public/assets/css/variables";
+@import 'bootstrap/scss/bootstrap';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Author-Light';
+  src: url('../public/assets/fonts/author/Author-Light.woff2') format('woff2'),
+  url('../public/assets/fonts/author/Author-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author-Regular';
+  src: url('../public/assets/fonts/author/Author-Regular.woff2') format('woff2'),
+  url('../public/assets/fonts/author/Author-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Author-Bold';
+  src: url('../public/assets/fonts/author/Author-Bold.woff2') format('woff2'),
+  url('../public/assets/fonts/author/Author-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

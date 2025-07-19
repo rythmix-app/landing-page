@@ -1,0 +1,104 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.counter-display {
+  display: flex;
+  gap: 8px;
+  font-family: 'Author-Bold', monospace;
+  font-weight: 900;
+  font-size: 7rem;
+  color: var(--blue-light);
+  line-height: 1;
+}
+
+.digit-container {
+  position: relative;
+  width: 0.8em;
+  height: 1.2em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digit-reel {
+  display: flex;
+  flex-direction: column;
+  transition: none;
+  will-change: transform;
+  position: relative;
+}
+
+.digit {
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.counter-label {
+  font-size: 1.8rem;
+  font-family: 'Author-Light', serif;
+  color: #5A5A5A;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .counter-display {
+    font-size: 4rem;
+    gap: 6px;
+  }
+  .digit-container {
+    width: 0.75em;
+    height: 1.1em;
+  }
+  .digit {
+    height: 1.1em;
+  }
+  .counter-label {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .counter-display {
+    font-size: 3.5rem;
+    gap: 4px;
+  }
+  .digit-container {
+    width: 0.7em;
+    height: 1em;
+  }
+  .digit {
+    height: 1em;
+  }
+  .counter-label {
+    font-size: 1.2rem;
+  }
+  .counter-container {
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-display {
+    font-size: 2.8rem;
+    gap: 2px;
+  }
+  .counter-label {
+    font-size: 1rem;
+  }
+}
