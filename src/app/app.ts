@@ -1,11 +1,13 @@
-import { Component, signal, OnInit, OnDestroy, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InputBloc } from './components/input-bloc/input-bloc';
 import { QualificationBloc } from './components/qualification-bloc/qualification-bloc';
+import { AnimatedCounterComponent } from './components/animated-counter/animated-counter';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, InputBloc, QualificationBloc],
+  standalone: true,
+  imports: [RouterOutlet, InputBloc, QualificationBloc, AnimatedCounterComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

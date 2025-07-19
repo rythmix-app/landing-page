@@ -260,3 +260,45 @@
     transform: translateY(-15px);
   }
 }
+
+/************** main 4 **************/
+.main-4 {
+  width: 100%;
+  height: auto;
+  background-color: #f8f9fa;
+
+  .title {
+    color: black;
+    font-size: 4rem;
+    font-family: 'Author-Bold', serif;
+  }
+
+
+  .stats-section {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+
+      .col-6 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stats-section {
+      padding: 3rem 1rem;
+    }
+  }
+}

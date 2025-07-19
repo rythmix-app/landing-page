@@ -1,5 +1,4 @@
 <div class="main-1 d-flex flex-column align-items-center gap-5 p-5">
-  <!-- Particules d'ondes (optionnel - ajoutez seulement si vous voulez plus d'effet) -->
   <div class="wave-particles"></div>
 
   <div class="logo">
@@ -89,4 +88,45 @@
     <img src="assets/images/iphone_view.png" alt="Iphone" class="phone-image" #phoneImage>
   </div>
   <div class="footer">Interface intuitive • Réactivité optimale • Expérience premium</div>
+</div>
+
+<div class="main-4 d-flex flex-column align-items-center gap-5 p-5">
+  <div class="title">Rejoignez le mouvement</div>
+  <div class="stats-section">
+    <div class="container">
+      <div class="row g-6">
+        <div class="col-6">
+          <app-animated-counter
+            [targetValue]="1000"
+            label="Utilisateurs pré-inscrits"
+            color="#14FFEC">
+          </app-animated-counter>
+        </div>
+
+        <div class="col-6">
+          <app-animated-counter
+            [targetValue]="50000"
+            label="Morceaux à jouer"
+            color="#14FFEC">
+          </app-animated-counter>
+        </div>
+
+        <div class="col-6">
+          <app-animated-counter
+            [targetValue]="15"
+            label="Modes de jeux"
+            color="#14FFEC">
+          </app-animated-counter>
+        </div>
+
+        <div class="col-6">
+          <app-animated-counter
+            [targetValue]="30"
+            label="Badges à collectionner"
+            color="#14FFEC">
+          </app-animated-counter>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
