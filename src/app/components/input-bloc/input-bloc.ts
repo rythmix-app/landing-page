@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import { SupabaseService } from '../../services/supabase.service'; // Ajustez le chemin
+import { NeonService } from '../../services/neon.service';
 
 @Component({
   selector: 'app-input-bloc',
@@ -23,7 +23,7 @@ export class InputBloc {
   isLoading: boolean = false;
   message: string = '';
 
-  constructor(private supabaseService: SupabaseService) {}
+  constructor(private neonService: NeonService) {}
 
   async onSubmit() {
     if (this.email && this.validateEmail(this.email)) {
@@ -31,26 +31,23 @@ export class InputBloc {
       this.message = '';
 
       try {
-        const { data, error } = await this.supabaseService.client
-          .from(this.tableType)
-          .insert([
-            {
-              email: this.email,
-              uuid: crypto.randomUUID()
-            }
-          ]);
+        const result = await this.neonService.insertEmail(this.tableType, this.email);
 
-        if (error) {
-          console.error('Erreur lors de l\'insertion:', error);
-          this.message = 'Une erreur est survenue. Veuillez réessayer.';
-        } else {
+        if (result && result.length > 0) {
           this.message = 'Merci ! Votre email a été enregistré.';
           this.emailSubmitted.emit(this.email);
-          this.email = ''; // Reset après envoi
+          this.email = '';
+        } else {
+          this.message = 'Une erreur est survenue. Veuillez réessayer.';
         }
-      } catch (err) {
-        console.error('Erreur:', err);
-        this.message = 'Une erreur est survenue. Veuillez réessayer.';
+      } catch (err: any) {
+        console.error('Erreur Neon:', err);
+
+        if (err.message?.includes('unique constraint') || err.message?.includes('duplicate key')) {
+          this.message = 'Cet email est déjà enregistré.';
+        } else {
+          this.message = 'Une erreur est survenue. Veuillez réessayer.';
+        }
       } finally {
         this.isLoading = false;
       }

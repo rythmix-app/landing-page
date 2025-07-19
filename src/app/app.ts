@@ -7,7 +7,7 @@ import { AnimatedCounterComponent } from './components/animated-counter/animated
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [InputBloc, QualificationBloc, AnimatedCounterComponent],
+  imports: [InputBloc, QualificationBloc, AnimatedCounterComponent, InputBloc],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
