@@ -68,4 +68,8 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
   onVipSubmit(userData: any) {
     console.log('VIP subscription:', userData);
   }
+
+  onEmailSubmit(email: string) {
+    console.log('Email reçu:', email);
+  }
 }
