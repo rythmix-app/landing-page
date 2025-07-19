@@ -1,0 +1,12 @@
+<div class="feature-card" [ngClass]="customClass">
+  <div class="icon-container">
+    <div class="icon-wrapper">
+      <i [class]="iconType + ' fa-' + icon" [style.color]="iconColor"></i>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <h3 class="card-title">{{ title }}</h3>
+    <p class="card-description">{{ description }}</p>
+  </div>
+</div>

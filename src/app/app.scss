@@ -40,6 +40,17 @@
     width: 60%;
     text-align: center;
     font-family: 'Author-Regular', serif;
+  }
 
+  .features-section {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+
+      .col-4 {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+      }
+    }
   }
 }
