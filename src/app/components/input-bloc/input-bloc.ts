@@ -15,7 +15,7 @@ export class InputBloc {
   @Input() buttonText: string = 'Je m\'inscris';
   @Input() bottomText: string = 'Accès exclusif • Pas de spam • Désinscription en 1 clic';
   @Input() placeholder: string = 'votre@email.com';
-  @Input() tableType: 'client' | 'clientVip' = 'client'; // Nouveau input pour choisir la table
+  @Input() tableType: 'client' | 'clientVip' = 'client';
 
   @Output() emailSubmitted = new EventEmitter<string>();
 
@@ -36,7 +36,7 @@ export class InputBloc {
           .insert([
             {
               email: this.email,
-              uuid: crypto.randomUUID() // Génère un UUID
+              uuid: crypto.randomUUID()
             }
           ]);
 
