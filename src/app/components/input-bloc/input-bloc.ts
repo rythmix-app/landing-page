@@ -1,12 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { NeonService } from '../../services/neon.service';
+import { ResendService } from '../../services/resend.service';
 
 @Component({
   selector: 'app-input-bloc',
-  imports: [
-    FormsModule
-  ],
+  imports: [FormsModule],
   templateUrl: './input-bloc.html',
   styleUrl: './input-bloc.scss'
 })
@@ -23,7 +22,10 @@ export class InputBloc {
   isLoading: boolean = false;
   message: string = '';
 
-  constructor(private neonService: NeonService) {}
+  constructor(
+    private neonService: NeonService,
+    private resendService: ResendService
+  ) {}
 
   async onSubmit() {
     if (this.email && this.validateEmail(this.email)) {
@@ -31,10 +33,24 @@ export class InputBloc {
       this.message = '';
 
       try {
+        // 1. Insérer en base
         const result = await this.neonService.insertEmail(this.tableType, this.email);
 
         if (result && result.length > 0) {
-          this.message = 'Merci ! Votre email a été enregistré.';
+          // 2. Envoyer l'email de bienvenue
+          try {
+            const isVip = this.tableType === 'clientVip';
+            await this.resendService.envoyerEmailBienvenue(this.email, isVip);
+
+            this.message = isVip
+              ? '🌟 Bienvenue VIP ! Vérifiez votre email pour vos privilèges exclusifs.'
+              : '✅ Merci ! Email de bienvenue envoyé, vérifiez votre boîte.';
+
+          } catch (emailError) {
+            console.error('Erreur envoi email:', emailError);
+            this.message = '✅ Inscription réussie ! (Email en cours d\'envoi...)';
+          }
+
           this.emailSubmitted.emit(this.email);
           this.email = '';
         } else {
