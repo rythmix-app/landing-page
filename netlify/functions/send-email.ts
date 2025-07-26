@@ -30,7 +30,7 @@ export const handler: Handler = async (event, context) => {
     const subject = isVip ? '👑 Bienvenue VIP chez Rythmix !' : '🎵 Bienvenue chez Rythmix !';
 
     const { data, error } = await resend.emails.send({
-      from: 'newsletter@rythmix-app.com',
+      from: isVip ? 'vip@rythmix-app.com' : 'newsletter@rythmix-app.com',
       to: [email],
       subject: subject,
       html: template,
