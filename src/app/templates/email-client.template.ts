@@ -154,7 +154,7 @@ export const EMAIL_CLIENT_TEMPLATE = `
 
       <div class="footer">
         Vous recevez cet email car vous vous êtes inscrit à Rythmix.<br/>
-        <a href="#" style="color:#14FFEC;">Se désabonner</a> – <a href="#" style="color:#14FFEC;">Voir en ligne</a>
+        <a href="#" style="color:#14FFEC;">Se désabonner</a> –<a href="mailto:app.rythmix@gmail.com?subject=Contact%20depuis%20la%20newsletter%20Rythmix&body=Bonjour,%0A%0A" style="color:#14FFEC;">Contact</a><br/>
       </div>
     </div>
   </div>
